@@ -1,0 +1,183 @@
+/* 把我们所有标签的内外边距清零 */
+* {
+    margin: 0;
+    padding: 0;
+    /* css3盒子模型 */
+    box-sizing: border-box;
+}
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+    font-style: normal
+}
+/* 去掉li 的小圆点 */
+li {
+    list-style: none
+}
+
+img {
+    /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle
+}
+
+button {
+    /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+    cursor: pointer
+}
+
+a {
+    color: #e0eee8;
+    text-decoration: none
+}
+
+a:hover {
+    color: #c81623
+}
+
+button,
+input {
+    /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    /* 默认有灰色边框我们需要手动去掉 */
+    border: 0; 
+    outline: none;
+}
+
+body {
+    /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #e0eee8;
+}
+
+.hide,
+.none {
+    display: none
+}
+/* 清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+textarea{
+    /* 边框清零 */
+    border:none;
+    /* 轮廓线清零 */
+    outline: none;
+    /* 防止文本域被随意拖拽 */
+    resize: none;
+}
+
+i{
+    /*文字样式*/
+    font-style: normal; 
+}
+
+table{
+    /*边框合并*/
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+
+/* 使用伪元素清除浮动 */
+.clearfix::before,
+.clearfix::after{
+    content:"";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: none;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* 版心*/
+.w{
+    width: 1883px;
+    margin: 0 auto;
+}
+
+/*可选*/
+/*单选框和复选框的配置，一般是分开的*/
+input[type="radio"],input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: none;
+}
+
+label{
+    display: inline-block;
+    cursor: pointer;
+}
+
+label input[type="radio"]+span,label input[type="checkbox"]+span{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url("../images/nocheck.png") no-repeat;
+}
+
+label input[type="radio"]:checked+span,label input[type="checkbox"]:checked+span{
+    background: url("../images/check.png") no-repeat;
+}
+
+label input[type="radio"]:checked~i,label input[type="checkbox"]:checked~i{
+    color: #38d6ff;
+}
+
+/*可选*/
+/* 自定义数字框配置 */
+input[type="number"]{
+    width: 76px;
+    height: 36px;
+    background-color: rgba(5,45,82,0.4);
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+input[type="number"]+div{
+    width: 30px;
+    height: 40px;
+    padding-left: 2px;
+    cursor: pointer;
+}
+
+input[type="number"]+div > .count_add{
+    display: block;
+    width: 28px;
+    height: 19px;
+    background: url("../images/count_add.png") no-repeat;
+    background-size: contain;
+    margin-bottom: 2px;
+}
+
+input[type="number"]+div > .count_subtract{
+    display: block;
+    width: 28px;
+    height: 19px;
+    background: url("../images/count_subtract.png") no-repeat;
+    background-size: contain;
+}
